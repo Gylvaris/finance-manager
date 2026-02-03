@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/server";
 
 export async function login(formData: FormData) {
   const supabase = await createClient();
@@ -23,5 +23,5 @@ export async function login(formData: FormData) {
     throw new Error(error.message);
   }
 
-  redirect("/");
+  redirect("/dashboard");
 }
