@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { logout } from "./auth/logout/actions";
 
 export default async function Home() {
   const supabase = await createClient();
@@ -28,8 +29,11 @@ export default async function Home() {
           <main className="flex-1 flex flex-col gap-6 px-4">
             <h2 className="font-medium text-xl mb-4">
               Finance Manager (Better name in the future)
-              {user ? <p>Logged in as {user.email}</p> : <p>Not logged in</p>}
+              {user ? <p>Logged in as {user.email}</p> : <p> Not logged in</p>}
             </h2>
+            <form action={logout}>
+              <button type="submit">Log out</button>
+            </form>
           </main>
         </div>
       </div>
