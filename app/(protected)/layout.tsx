@@ -1,5 +1,5 @@
-import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
 
 export default async function ProtectedLayout({
   children,
@@ -13,7 +13,7 @@ export default async function ProtectedLayout({
   } = await supabase.auth.getSession();
 
   if (!session) {
-    redirect("/auth/login");
+    redirect("/");
   }
 
   return <div>{children}</div>;
