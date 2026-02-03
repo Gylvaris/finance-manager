@@ -1,3 +1,5 @@
+import { register } from "./actions";
+
 export default function RegisterPage() {
   return (
     <main>
