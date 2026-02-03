@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
-import { logout } from "./auth/logout/actions";
+import { logout } from "./(public)/auth/logout/actions";
 
 export default async function Home() {
   const supabase = await createClient();
