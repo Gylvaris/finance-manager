@@ -1,3 +1,4 @@
+import { createTransaction } from "./actions";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function TransactionsPage() {
@@ -15,6 +16,12 @@ export default async function TransactionsPage() {
   return (
     <main>
       <h1>Transactions</h1>
+
+      <form action={createTransaction}>
+        <input name="amount" type="number" placeholder="Amount" required />
+        <input name="description" placeholder="Description" />
+        <button type="submit">Add</button>
+      </form>
 
       {transactions.length === 0 && <p>No transactions yet.</p>}
 
