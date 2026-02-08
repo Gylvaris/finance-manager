@@ -1,5 +1,5 @@
-import { createTransaction } from "./actions";
 import { createClient } from "@/lib/supabase/server";
+import { createTransaction } from "./actions";
 
 export default async function TransactionsPage() {
   const supabase = await createClient();
